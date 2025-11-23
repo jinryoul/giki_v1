@@ -1,0 +1,100 @@
+<!doctype html GIKI-chat V1>
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>MOIP AI 심사도우미 'GIKI'</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        background-color: #c9c9c9; /* 최외각 색상 */
+      }
+
+      .page-wrapper {
+        max-width: 1200px;
+        margin: 24px auto;
+        padding: 5px;
+        background: #000000; /* 채팅창을 감싼 margin 영역 색상 */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;          /* 수직 정렬 */
+        justify-content: space-between; /* 좌측 텍스트 / 우측 로고 */
+        gap: 32px;
+        padding: 12px 40px;
+        background-color: #000000;    /* 헤더 배경 검정색 */
+      }
+
+      .header-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;              /* 제목 흰색 */
+        margin-bottom: 4px;
+      }
+
+      .header-subtitle {
+        font-size: 14px;
+        color: #cfcfcf;              /* 부제 연한 회색 */
+      }
+
+      /* 로고 크기/여백 및 강조 */
+      .header-logo {
+        height: 140px;               /* 로고 높이 키우기 */
+        max-height: 20vh;
+        width: auto;                 /* 비율 유지 */
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        /* 텍스트와의 간격은 header의 gap으로 제어 */
+      }
+
+      .chat-frame-wrapper {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 720px; /* 박스 높이 (원하는 대로 조절) */
+      }
+
+      .chat-frame-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- 상단 로고 + 제목 영역 -->
+      <div class="header">
+        <div class="header-text">
+          <div class="header-title">지식재산처 AI 심사도우미 '지키(GIKI)'</div>
+          <div class="header-subtitle">
+            공개출원·공개공보의 청구항을 수집·분석하여 선행기술조사를 도와드립니다.
+          </div>
+        </div>
+
+        <!-- 로고 이미지 (같은 폴더에 GIKI_real_v5_transparent.png가 있어야 합니다) -->
+        <img
+          src="GIKI_real_v5_transparent.png"
+          alt="MOIP GIKI"
+          class="header-logo"
+        />
+      </div>
+
+      <!-- 아래 박스 안에 n8n Hosted Chat을 그대로 표시 -->
+      <div class="chat-frame-wrapper">
+        <iframe
+          src="https://matched-targets-famous-availability.trycloudflare.com/webhook/1eae1690-8b3f-4dbd-977b-0550eee0561a/chat"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>
